@@ -1,0 +1,40 @@
+Exercise 2.1
+
+1. 1535589058228964592278097181151415909200385800452495618150720642558740272322299
+4884008219147008757971831655627949100896188745493532983896385354689776323117926
+7772323436303981292999079822475344008782418819101080534643599874999609264097953
+0974424855611373502186548925391038652857840156250967512563069982941255640478823
+5549396405614436137968568655881410562868241866370339494884646632902803644765399
+8790948055882831513885276852311197550384335186542065448318479979404349933751660
+2578703543161331291559200663108824166410988611631420807
+
+Command:(expt 7 (expt 5 4)) C-j
+
+2. 1755
+
+Command: (* 625 (log 7 2)) C-j, (ceiling 1754.5968262860026) C-j
+
+3. C-h k C-h k shows the documentation for the command C-h k, which is a part of the documentation from command C-h b
+because the function of C-h k is to show the documentation for the following key command.
+
+4. C-h k M-SPC shows the documentation for the command M-SPC, which is a part of the documentation from command C-h b
+because the function of C-h k is to show the documentation for the following key command.
+
+5. (cycle-spacing n nil 'single-shot))
+
+
+Homework
+
+1. randline.py will try to process the file but there is nothing in /dev/null, so there will be a Index error: list index out of range
+
+2. There will be an error:
+  File "/w/home.25/cs/ugrad/hanwen/Desktop/Assignment_2/randline.py", line 65
+    except IOError as (errno, strerror):
+                      ^
+SyntaxError: invalid syntax
+
+becausePython3 has different syntax when exceptions and errors occur, so it cannot process the exception code written in Python2
+
+3. It is not pratical to use the structural pattern matching because I have already used parser.parse_known_args(sys.argv[1:]), so that the cases are matched and there is no need to include the match_case function in structural pattern matching
+
+4. The program will run the same in python2 as in python3
