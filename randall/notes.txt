@@ -1,0 +1,58 @@
+Hanwen Shen 505569051
+
+1. Split randall.c into different files:
+
+rand64-hw.c containing functions cpuid, rdrand_supported, init, rand64, fini
+
+rand64-sw.c containing functions init, rand64, fini
+
+output.c containing function writeBytes
+
+options.c
+
+randall.c containing main function
+
+and then Create a header file for every .c file
+
+2. In rand64-sw.c, add setFile function
+
+Add mrand48_r.c and mran48_r.h using GNU function
+
+3. In options.h, create option struct
+
+In options.c, create option parsing function that parses and checks the options
+
+4. In randall.c add options struct and options parsing functions that print bytes and errors
+
+If -o, output by allocating a buffer of byteOutputSize, 
+put byteOutputSize bytes into buffer, and write buffer
+Else, output by writeBytes
+
+5. Add functions.o and their dependencies to the Makefile
+
+ Add make check and make sanity-check commands and their dependencies
+
+Create submission-tarball rule that contains all .c and .h files, make and test files
+
+Create repository-tarball rule that also contains .git
+
+Create check rule that tests program
+
+time ./randall 133562368 >/dev/null
+
+real    0m2.866s
+user    0m2.828s
+sys     0m0.017s
+
+time ./randall 133562368 | cat >/dev/null
+
+real    0m3.186s
+user    0m3.058s
+sys     0m0.194s
+
+time ./randall 133562368 >rand.data
+
+real    0m4.300s
+user    0m3.030s
+sys     0m0.235s
+
